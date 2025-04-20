@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 // 1. Create the context
 const AppContext = createContext();
@@ -11,6 +11,17 @@ export const AppProvider = ({ children }) => {
     dinner: false,
   });
 
+  useEffect(() => {
+    const saved = localStorage.getItem('attendence');
+    if(saved) {
+      setAttendance(JSON.parse(saved));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('attendence', JSON.stringify(attendance));
+  }, [attendance]);
+  
   const markAttendance = (meal, value) => {
     setAttendance((prev) => ({
       ...prev,
@@ -18,8 +29,15 @@ export const AppProvider = ({ children }) => {
     }));
   };
 
+  const resetAttendance = () => {
+    setAttendance({
+      breakfast: false,
+      lunch: false,
+      dinner: false,
+    })
+  }
   return (
-    <AppContext.Provider value={{ attendance, markAttendance }}>
+    <AppContext.Provider value={{ attendance, markAttendance, resetAttendance }}>
       {children}
     </AppContext.Provider>
   );
