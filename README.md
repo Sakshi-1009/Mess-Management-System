@@ -1,12 +1,94 @@
-# React + Vite
+# Mess Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive web application for managing college/institution mess operations, built with React and Material-UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive Dashboard**
+  - Daily menu display with visual representations
+  - Real-time meal status updates
+  - Comprehensive menu details
+  - Meal timing information
 
-## Expanding the ESLint configuration
+- **Attendance Management**
+  - Secure admin login (password: 'iamadmin')
+  - Student attendance tracking
+  - Meal-wise attendance marking
+  - Paginated student list
+  - Room and roll number tracking
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Feedback System**
+  - Meal-specific feedback
+  - Rating system
+  - Comments and suggestions
+  - User-friendly form interface
+
+## Technologies Used
+
+- React.js
+- Material-UI (MUI)
+- React Router
+- Axios
+- Netlify (Deployment)
+
+## Setup and Installation
+
+1. Clone the repository:
+```bash
+git clone [repository-url]
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+```
+
+## Screenshots
+
+### Dashboard
+<div align="center">
+  <img src="./src/assets/image.png" alt="Dashboard" width="800"/>
+  <p><em>Dashboard showing daily menu and meal timings</em></p>
+</div>
+
+### Attendance System
+<div align="center">
+  <img src="./src/assets/image copy 2.png" alt="Attendance" width="800"/>
+  <p><em>Student attendance management with admin login</em></p>
+</div>
+<div align="center">
+  <img src="./src/assets/image copy.png" alt="Attendance" width="800"/>
+  <p><em>Student attendance management with admin login</em></p>
+</div>
+
+### Feedback Form
+<div align="center">
+  <img src="./src/assets/image copy 3.png" alt="Feedback" width="800"/>
+  <p><em>User feedback form with ratings and comments</em></p>
+</div>
+
+## Deployment
+
+The application is deployed using Netlify. Configuration includes:
+
+- Automatic deployments from main branch
+- Client-side routing support
+- Environment variable management
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+## Project Structure
