@@ -43,8 +43,8 @@ export default function Navbar() {
                         component={Link}
                         to="/Auth"
                         startIcon={<FeedbackIcon />}
-                        color={location.pathname === '/feedback' ? 'primary' : 'inherit'}
-                        variant={location.pathname === '/feedback' ? 'contained' : 'text'}
+                        color={location.pathname === '/Auth' ? 'primary' : 'inherit'}
+                        variant={location.pathname === '/Auth' ? 'contained' : 'text'}
                     >
                         Login/SignUp
                     </Button>
