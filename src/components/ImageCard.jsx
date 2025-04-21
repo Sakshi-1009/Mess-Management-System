@@ -76,7 +76,7 @@ export default function ImageCard({ type = 'random', menuItems = [], sx = {} }) 
                     display: 'flex', 
                     justifyContent: 'center', 
                     alignItems: 'center', 
-                    height: 220,
+                    height: 200,
                     bgcolor: 'background.paper',
                     width: '100%'
                 }}>

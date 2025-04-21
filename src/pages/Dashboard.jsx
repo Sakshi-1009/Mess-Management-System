@@ -128,7 +128,7 @@ export default function Dashboard() {
                 {/* Menu and Timings Section */}
                 <Grid container spacing={3}>
                     {/* Complete Menu Section */}
-                    <Grid item xs={12} md={9}>
+                    <Grid item xs={12} md={10}>
                         <Paper elevation={3} sx={{ 
                             p: 4, 
                             borderRadius: 2,
@@ -142,7 +142,7 @@ export default function Dashboard() {
                                 top: 0,
                                 left: 0,
                                 width: '100%',
-                                height: '4px',
+                                height: '4000px',
                                 background: 'linear-gradient(to right, primary.light, primary.main)'
                             }} />
                             
@@ -230,7 +230,7 @@ export default function Dashboard() {
                     </Grid>
 
                     {/* Timings Section */}
-                    <Grid item xs={12} md={3}>
+                    <Grid item xs={12} md={2}>
                         <Paper 
                             elevation={3} 
                             sx={{ 
