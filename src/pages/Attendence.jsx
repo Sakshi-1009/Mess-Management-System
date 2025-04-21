@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import AdminLoginDialog from '../components/AdminLoginDialog';
 import {
   Container,
   Paper,
@@ -20,9 +22,14 @@ export default function Attendance() {
   const [studentAttendance, setStudentAttendance] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [showLoginDialog, setShowLoginDialog] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchStudents = async () => {
+      if (!isAuthenticated) return;
+      
       try {
         const response = await fetch('https://randomuser.me/api/?results=50');
         const data = await response.json();
@@ -45,8 +52,21 @@ export default function Attendance() {
       }
     };
 
-    fetchStudents();
-  }, []);
+    if (isAuthenticated) {
+      fetchStudents();
+    }
+  }, [isAuthenticated]);
+
+  // If not authenticated, show only the dialog
+  if (!isAuthenticated) {
+    return (
+      <AdminLoginDialog
+        open={showLoginDialog}
+        onClose={() => navigate('/')}
+        onSuccess={() => setIsAuthenticated(true)}
+      />
+    );
+  }
 
   const handleStudentAttendance = (studentId, meal) => {
     setStudentAttendance((prev) =>

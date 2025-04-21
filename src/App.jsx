@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard'
 import Attendence from './pages/Attendence'
 import Feedback from './pages/Feedback'
 import './App.css'
+import Auth from './pages/Auth'
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Dashboard />} />
         <Route path='/attendence' element={<Attendence />} />
         <Route path='/feedback' element={<Feedback />} />
+        <Route path='/Auth' element={<Auth />} />
       </Routes>
     </>
   )
